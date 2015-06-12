@@ -1,0 +1,13 @@
+<?php if(count($errors) > 0): ?>
+<div class="am-panel am-panel-default">
+    <div class="am-panel-bd">
+        <div class="am-alert am-alert-danger">
+            <ul>
+                <?php foreach($errors->all() as $error): ?>
+                <li><?php echo e($error); ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

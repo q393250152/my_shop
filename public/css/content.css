@@ -1,0 +1,191 @@
+/*通用*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.clear {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    clear: both;
+}
+
+.container-fluid {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Helvetica Neue",
+    "Helvetica, Arial",
+    "Hiragino Sans GB",
+    "Hiragino Sans GB W3",
+    "Microsoft YaHei UI",
+    "Microsoft YaHei",
+    "WenQuanYi Micro Hei",
+    sans-serif;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*body{*/
+/*background: url("../images/x2.jpg") no-repeat center right fixed;*/
+/*background-size:cover;*/
+/*}*/
+/**/
+
+/*头部横向菜单栏*/
+.head {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.navbar-default .navbar-brand {
+    font-size: 26px;
+}
+
+.mune_nav {
+    margin-left: 300px;
+}
+
+.navbar-default .navbar-nav > li > a {
+
+}
+
+.nav_1 {
+    float: right;
+}
+
+.glyphicon-off {
+    color: red;
+    font-size: 30px;
+    margin-top: -5px;
+}
+
+/**/
+
+/*左侧菜单栏*/
+.left {
+    float: left;
+    width: 15%;
+    border: 2px solid #CED4CA;
+}
+
+.menu_name {
+    background: #F8F8F8;
+    padding: 10px;
+}
+
+.menu_name h2 {
+    display: block;
+    padding: 5px 0px;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.glyphicon_menu {
+    margin-right: 20px;
+    float: right;
+    margin-top: -25px;
+
+}
+
+.glyphicon-minus {
+    margin-right: 20px;
+    float: right;
+    margin-top: -25px;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.presen {
+    background: #F8F8F8;
+}
+
+.presen ul {
+    display: none;
+}
+
+.glyphicon-menu-down {
+    margin-right: 50px;
+    float: right;
+    margin-top: -28px;
+
+}
+
+.glyphicon-menu-up {
+    margin-right: 50px;
+    float: right;
+    margin-top: -28px;
+}
+
+/*右侧显示区*/
+.right {
+    float: left;
+    width: 85%;
+}
+
+.top {
+    border: 1px solid #CED4CA;
+    padding: 10px;
+    height: 50px;
+}
+
+.top .p1 {
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.top .p2 {
+    color: #CED4CA;
+}
+
+.top .p3 {
+    color: #CED4CA;
+}
+
+.top .p5 {
+    float: right;
+}
+
+.top .p6 {
+    margin-right: 3px;
+}
+
+.Brand_table th {
+    text-align: center;
+}
+
+.Brand_table td {
+    text-align: center;
+}
+
+.Brand_table {
+    text-align: center;
+}
+
+td {
+    vertical-align: middle;
+}
+
+.img1 {
+    display: none;
+}
+
+
+
+

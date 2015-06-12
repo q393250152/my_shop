@@ -1,0 +1,72 @@
+body {
+    background: url("../images/x3.jpg") no-repeat center right fixed;
+    background-size: cover;
+}
+
+.container {
+    width: 500px;
+    margin-top: 200px;
+}
+
+.heard {
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.heard h2 {
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.button {
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+.button h3 {
+    font-size: 16px;
+    display: block;
+    float: left;
+    margin-top: 4px;
+}
+
+.button span {
+    display: block;
+    float: left;
+    margin-left: 5px;
+    margin-top: 0px;
+    font-size: 18px;
+}
+
+.input-group {
+    float: left;
+    width: 350px;
+    margin-left: 60px;
+    margin-top: 30px;
+
+}
+
+.pass {
+    margin-bottom: 50px;
+}
+
+.checkbox {
+    float: left;
+    margin-left: 60px;
+    margin-top: -15px;
+}
+
+.btn {
+    margin-left: 215px;
+    margin-top: 30px;
+    background: #AA90CF;
+    border: none;
+}
+
+.alert {
+    width: 350px;
+    margin-top: 60px;
+    margin-left: 60px;
+    text-align: center;
+}
+

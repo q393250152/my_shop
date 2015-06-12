@@ -1,0 +1,102 @@
+<?php $__env->startSection('css'); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('css/brand.css')); ?>">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <?php /*右边显示区*/ ?>
+    <div class="right">
+        <div class="top">
+            <span class="p1">管理中心</span>
+            <span class="glyphicon glyphicon-play p2" aria-hidden="true"></span>
+            <span class="p3">会员管理</span>
+        </div>
+        <?php echo $__env->make('layouts._message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="center">
+            <!-- Indicates a dangerous or potentially negative action -->
+            <div type="button" class="btn btn-danger">会员信息</div>
+            <div class="search-form">
+                <form class="bs-example bs-example-form" method="get" data-example-id="input-group-with-button"
+                      action="/admin/brand/search">
+                    <div class="input-group">
+                        <input type="search" class="form-control search" placeholder="Search for..." name="keyword"
+                               value="">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">搜索</button>
+                                </span>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="table-responsive" data-example-id="hoverable-table">
+            <form class="form1" action="">
+                <?php echo csrf_field(); ?>
+
+                <?php echo method_field('put'); ?>
+
+                <table class=" table-hover Brand_table table table-bordered">
+                    <thead style="background:#F3F3F3;">
+                    <tr>
+                        <th>编号</th>
+                        <th>头像</th>
+                        <th>昵称</th>
+                        <th>openid</th>
+                        <th>性别</th>
+                        <th>关注时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach($users as $user): ?>
+                        <tr>
+                            <th class="ID" scope="row"><?php echo e($user->id); ?></th>
+                            <td><img src="<?php echo e($user->headimgurl); ?>"  class="logo_img"> </td>
+                            <td><?php echo e($user->nickname); ?></td>
+                            <td><?php echo e($user->openid); ?></td>
+                            <td>
+                                <?php if($user->sex=='1'): ?>
+                                    男
+                                <?php else: ?>
+                                    女
+                                <?php endif; ?>
+                            </td>
+                            <td><?php echo e($user->created_at); ?></td>
+                            <td style="width: 150px;">
+                                <div class="td">
+
+                                    <div class="fist">
+                                        <a href="<?php echo e(route('admin.user.show', $user->id)); ?>">
+                                            <span class="glyphicon glyphicon-list" aria-hidden="true"
+                                                  data-toggle="modal" data-target="#myModal1"></span>
+                                            <span class="glyphicon-class">订单</span>
+                                        </a>
+                                    </div>
+                                    <div class="sec">
+                                        <a href="<?php echo e(route('admin.user.destroy', $user->id)); ?>" data-method="delete" data-token="<?php echo e(csrf_token()); ?>" data-confirm="确认删除吗？">
+                                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                            <span class="glyphicon-class">删除</span>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="page">
+            <?php echo $users->render(); ?>
+
+        </div>
+
+
+    </div>
+    <?php /*右边显示区结束*/ ?>
+    <div class="clear"></div>
+
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/login.css')}}">
+</head>
+<style>
+    .form-control{
+        margin-top: -5px;
+        margin-left: 10px;
+    }
+</style>
+<body>
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<div class="container">
+    <div class="nav">
+        <div class="heard">
+            <h2>注册页面</h2>
+        </div>
+        <div class="button">
+            <h3>如有帐号，请直接</h3><a href="/auth/login"> <span>登录</span></a>
+        </div>
+        <form method="post" action="/auth/register" class="form1">
+            {!! csrf_field() !!}
+            <div class="input-group">
+                <label for="inputEmail3" class="col-sm-2 control-label text-nowrap">昵称：</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputGroupSuccess3"
+                           aria-describedby="inputGroupSuccess3Status" name="name" value="{{ old('name')}}">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="inputEmail3" class="col-sm-2 control-label text-nowrap">注册邮箱：</label>
+
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputGroupSuccess3" value="{{ old('email') }}"
+                           aria-describedby="inputGroupSuccess3Status" name="email">
+                </div>
+            </div>
+            <div class="input-group pass">
+                <label for="inputEmail3" class="col-sm-2 control-label text-nowrap">密码：</label>
+
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputGroupSuccess2"
+                           aria-describedby="inputGroupSuccess3Status" name="password">
+                </div>
+            </div>
+            <div class="input-group pass" style="margin-top: -20px;">
+                <label for="inputEmail3" class="col-sm-2 control-label text-nowrap">确认密码：</label>
+
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputGroupSuccess2"
+                           aria-describedby="inputGroupSuccess3Status" name="password_confirmation">
+                </div>
+            </div>
+
+            <div class="checkbox">
+                <!--<label>-->
+                <!--<input type="checkbox"> ��ס����-->
+                <!--</label>-->
+                <button type="submit" class="btn btn-default" style="margin-left: 295px;">注册</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+<script rel="stylesheet" src="{{asset('jquery/assets/js/jquery-2.1.4.min.js')}}"></script>
+<script rel="stylesheet" src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+<script rel="stylesheet" src="{{asset('js/login.js')}}"></script>
+</body>
+</html>

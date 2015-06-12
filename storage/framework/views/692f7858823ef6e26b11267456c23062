@@ -1,0 +1,25 @@
+<?php /*后台提示块*/ ?>
+<?php if(session('info')): ?>
+    <div class="alert alert-danger" role="alert">
+        <?php echo e(session('info')); ?>
+
+    </div>
+<?php endif; ?>
+
+
+<?php /*登录注册提示块*/ ?>
+<?php if(count($errors) > 0): ?>
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            <?php foreach($errors->all() as $error): ?>
+                <li><?php echo e($error); ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+<?php endif; ?>
+<script>
+    setTimeout(function () {
+        $('.alert').hide();
+    }, 3000);
+</script>

@@ -1,0 +1,111 @@
+.form-horizontal .form-control {
+    width: 50%;
+}
+
+.col-sm-2s {
+    text-align: right;
+    margin: 0px;
+}
+
+.col-end {
+    float: left;
+}
+
+.td .glyphicon-edit {
+    display: block;
+}
+
+.td .glyphicon-list {
+    display: block;
+    font-size: 18px;
+}
+
+.td .glyphicon-share-alt {
+    display: block;
+    font-size: 18px;
+}
+
+.logo_img {
+    width: 50px;
+    height: 50px;
+}
+
+.td .glyphicon-trash {
+    display: block;
+}
+
+.td .glyphicon-th-list {
+    display: block;
+}
+
+.fist {
+    float: left;
+    color: #5cb85c;
+    cursor: pointer
+
+}
+
+.td {
+    margin-left: 30px;
+}
+
+.sec {
+    float: left;
+    margin-left: 20px;
+    color: #d9534f;
+    cursor: pointer
+}
+
+.glyphicon-th-list {
+    font-size: 18px;
+    color: #5CB85C;
+}
+
+.glyphicon-edit {
+    font-size: 18px;
+    color: #5CB85C;
+}
+
+.glyphicon-trash {
+    font-size: 18px;
+    color: #D9534F;
+}
+
+.glyphicon {
+    cursor: pointer
+}
+
+.center {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CED4CA;
+}
+
+.center .btn {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.search-form {
+    float: right;
+}
+
+.bs-example-form {
+    width: 200px;
+    margin-right: 30px;
+}
+
+.page {
+    text-align: center;
+    margin-top: 20px;
+    /*border-top: 1px solid #CED4CA;*/
+}
+
+#brand_logo_img {
+    width: 200px;
+    border: 1px solid #65C400;
+}
+
+.att3 .btn {
+    float: left;
+}

@@ -1,0 +1,63 @@
+<?php $__env->startSection('css'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('webupload/dist/webuploader.css')); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('webupload/examples/image-upload/style.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/brand.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/edit.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/category.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/good.css')); ?>">
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <?php /*右边显示区*/ ?>
+    <div class="right">
+        <div class="top">
+            <span class="p1">微信管理：</span>
+            <span class="glyphicon glyphicon-play p2" aria-hidden="true"></span>
+            <span class="p3">接口配置</span>
+        </div>
+        <?php echo $__env->make('layouts._message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="bs-example col-sm-1">
+            <button type="button" class="btn btn-success">接口配制</button>
+        </div>
+
+        <div class="bs-example col-sm-10" data-example-id="textarea-form-control">
+            <form action="/admin/wechat/set_config" method="post">
+                <?php echo csrf_field(); ?>
+
+                <?php echo method_field('put'); ?>
+
+                <textarea class="form-control" name="config" rows="8"><?php echo e($config); ?></textarea>
+                <button type="submit" class="btn btn-primary" style="margin-top: 20px;margin-left: 0px;">提交保存</button>
+            </form>
+
+        </div>
+        <div class="clear"></div>
+
+
+        <?php /*右边显示区结束*/ ?>
+        <div class="clear"></div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
+    <script src="<?php echo e(asset('js/jquery.html5-fileupload.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+    <script>
+        $(".tab li:first").show();
+        $(function () {
+
+            $(".good_ul li").click(function () {
+                var index = $(this).index();
+                $(this).addClass("active").siblings().removeClass("active");
+                $(".tab li").eq(index).show().siblings().hide();
+            })
+            $(".webuploader-pick").click(function () {
+                $(".webuploader-element-invisible").trigger("click");
+
+            })
+
+
+        })
+
+
+    </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

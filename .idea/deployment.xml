@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="jlr">
+    <serverData>
+      <paths name="jlr">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="/var/www/jlr/my_shop" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="my_shop">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
