@@ -27,9 +27,9 @@ class IndexController extends Controller
         $this->app_id = config('wechat.app_id');
         $this->secret = config('wechat.secret');
         $this->user = session()->get('user');
+         $this->check_login();
         //初始化用户购物车的数量
         view()->share(['cart_number' => $this->cart_number()]);
-        $this->check_login();
     }
 
     //统计用户购物车商品数量
@@ -191,6 +191,60 @@ class IndexController extends Controller
 
         return view('wechat.obligation',['obligation'=>$obligation]);
     }
+    
+    //微信支付
+    public function pay()
+    {
+        $business = new Business(
+            $this->app_id,                          // APP_ID,
+            '7344f69d271b71b61b1b817e573f5f90',     // AppSecret,
+            1230390602,                             // 微信支付商户号,
+            '1123325aedfafqr34234123421wqerwq'      // api秘钥
+        );
+
+
+        /**
+         * 第 2 步：定义订单
+         */
+        $order = new Order();
+        $order->body = '我的商城订单';
+        $order->out_trade_no = md5(uniqid().microtime());
+        $order->total_fee = '1';    // 单位为 “分”, 字符串类型
+        $order->openid = session()->get('user')->openid;
+
+        $order->notify_url = 'http://jlr.whphp.com/wechat';
+
+        /**
+         * 第 3 步：统一下单
+         */
+        $unifiedOrder = new UnifiedOrder($business, $order);
+        /**
+         * 第 4 步：生成支付配置文件
+         */
+        $payment = new Payment($unifiedOrder);
+        // return $payment->getConfig();
+        return view('wechat.pay')->with('config', $payment->getConfig());
+    }
+
+    public function notify(){
+        $notify = new Notify(
+            $this->app_id,                          // APP_ID,
+            '7344f69d271b71b61b1b817e573f5f90',     // AppSecret,
+            1230390602,                             // 微信支付商户号,
+            '1123325aedfafqr34234123421wqerwq'      // api秘钥
+        );
+
+        $transaction = $notify->verify();
+
+        if (!$transaction) {
+            $notify->reply('FAIL', 'verify transaction error');
+        }
+
+        //修改订单状态
+
+        echo $notify->reply();
+    }
+
 
 
 }

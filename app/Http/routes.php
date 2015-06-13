@@ -32,6 +32,8 @@ Route::group(['namespace' => 'Wechat'], function () {
     Route::get('account', 'IndexController@account');
     Route::get('order','IndexController@order');
     Route::get('/order/obligation','IndexController@obligation');
+    Route::get('pay', 'IndexController@pay');
+    Route::any('notify', 'IndexController@notify');
 });
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'csrf']], function () {
     Route::get('/', 'IndexController@index');
